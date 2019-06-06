@@ -19,7 +19,7 @@ node {
         }
 
         timeout(time: 3, unit: 'MINUTES') {
-            sh './health-check.sh'
+            // sh './health-check.sh'
             sh 'echo "--step 02---function timeout(3) in Deploy stage "'
         }
     }
