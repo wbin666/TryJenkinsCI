@@ -6,6 +6,10 @@ node {
         echo 'Testing'
     }
     if (currentBuild.currentResult == 'SUCCESS') {
+        stage('Sanity check') {
+            input "Does the staging environment look ok?"
+        }
+        
         stage('Deploy') {
             echo 'Deploying'
         }
