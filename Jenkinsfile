@@ -1,4 +1,17 @@
 node {
+    stage('Build') {
+        echo 'Building'
+    }
+    stage('Test') {
+        echo 'Testing'
+    }
+    if (currentBuild.currentResult == 'SUCCESS') {
+        stage('Deploy') {
+            echo 'Deploying'
+        }
+    }
+    
+    /*
     checkout scm
     stage('checkout') {
         docker.image('maven:3.3.3').inside {
@@ -50,4 +63,5 @@ node {
 
         echo 'This will always run'
     }
+    */
 }
